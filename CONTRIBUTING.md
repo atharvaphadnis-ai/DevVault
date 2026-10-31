@@ -5,7 +5,7 @@ Thanks for helping make DevVault better!
 ## Getting started
 
 ```bash
-git clone <your fork>
+git clone https://github.com/atharvaphadnis-ai/devvault
 cd devvault
 npm --prefix frontend install
 wails dev            # or: go test ./internal/... for backend-only work
