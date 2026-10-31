@@ -6,6 +6,9 @@
 
 ---
 
+## Overview
+<img width="1920" height="1200" alt="download" src="https://github.com/user-attachments/assets/172e1ad2-f13e-45d8-9dd5-77c36760b8e2" />
+
 ## Highlights
 
 - **DevVault Anywhere** — reach your DevVault (and its agent API) securely from another machine through a **managed relay**: the desktop agent makes *outbound-only* TLS connections, so there is **no port forwarding, no public IP, no firewall changes**. Pairing codes + manual approval + certificate pinning + a one-click kill switch.
