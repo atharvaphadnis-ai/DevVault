@@ -1,0 +1,9 @@
+{
+  "id": "com.devvault.hello",
+  "name": "Hello Plugin",
+  "version": "1.0.0",
+  "description": "Example DevVault plugin: JSON-RPC over stdio, demonstrates the host API with permissions",
+  "runtime": "node",
+  "entry": "main.js",
+  "permissions": ["host/projects/list", "host/tasks/count"]
+}
