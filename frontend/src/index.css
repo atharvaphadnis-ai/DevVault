@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+html[data-theme="dark"] {
+  --bg: #0b0e14;
+  --surface: #11151e;
+  --surface2: #171c27;
+  --border: #232a38;
+  --text: #e6eaf2;
+  --muted: #8b93a7;
+  --accent: #6366f1;
+  --accent2: #22d3ee;
+  --ok: #34d399;
+  --warn: #fbbf24;
+  --danger: #f87171;
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --surface2: #eef1f7;
+  --border: #dfe4ee;
+  --text: #10182b;
+  --muted: #5b6474;
+  --accent: #4f46e5;
+  --accent2: #0891b2;
+  --ok: #059669;
+  --warn: #b45309;
+  --danger: #dc2626;
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-bg text-ink font-sans antialiased;
+  overflow: hidden;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 6px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@layer components {
+  .card {
+    @apply bg-surface border border-line rounded-xl shadow-card;
+  }
+  .input {
+    @apply bg-surface2 border border-line rounded-lg px-3 py-2 text-sm text-ink
+      placeholder:text-muted outline-none focus:border-accent transition-colors;
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium
+      transition-all duration-150 select-none disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-primary {
+    @apply btn text-white;
+    background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 60%, var(--accent2)));
+  }
+  .btn-primary:hover {
+    filter: brightness(1.12);
+  }
+  .btn-ghost {
+    @apply btn text-ink hover:bg-surface2 border border-line;
+  }
+  .btn-danger {
+    @apply btn text-white;
+    background: var(--danger);
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full border border-line bg-surface2
+      px-2 py-0.5 text-xs text-muted;
+  }
+  .section-title {
+    @apply text-sm font-semibold uppercase tracking-wider text-muted;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(120deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.xterm-holder .xterm {
+  padding: 8px;
+}
